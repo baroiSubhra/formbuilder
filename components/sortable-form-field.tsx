@@ -6,7 +6,7 @@ import { CSS } from "@dnd-kit/utilities"
 import type { FormField } from "@/lib/store"
 import { FormFieldRenderer } from "./form-field-renderer"
 import { useFormStore } from "@/lib/store"
-import { GripVertical, Trash2, Copy } from "lucide-react"
+import { GripVertical, Trash2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface SortableFormFieldProps {
@@ -14,7 +14,7 @@ interface SortableFormFieldProps {
 }
 
 export function SortableFormField({ field }: SortableFormFieldProps) {
-  const { selectedFieldId, selectField, deleteField, addField } = useFormStore()
+  const { selectedFieldId, selectField, deleteField } = useFormStore()
   const isSelected = selectedFieldId === field.id
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
@@ -29,18 +29,6 @@ export function SortableFormField({ field }: SortableFormFieldProps) {
     transform: CSS.Transform.toString(transform),
     transition,
   }
-
-  // const handleDuplicate = (e: React.MouseEvent) => {
-  //   e.stopPropagation()
-  //   addField({
-  //     type: field.type,
-  //     label: `${field.label} (Copy)`,
-  //     placeholder: field.placeholder,
-  //     required: field.required,
-  //     options: field.options,
-  //     validation: field.validation,
-  //   })
-  // }
 
   return (
     <div

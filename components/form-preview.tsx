@@ -16,12 +16,11 @@ export function FormPreview() {
     formState: { errors },
     setValue,
     watch,
-    reset,
   } = useForm({
     mode: "onChange",
   })
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: Record<string, unknown>) => {
     setIsSubmitting(true)
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000))
@@ -31,7 +30,7 @@ export function FormPreview() {
             <code className="text-white block">{JSON.stringify(data, null, 2)}</code>
           </pre>
         ),
-      });
+      })
     } catch (error) {
       console.error("Form submission error:", error)
       toast("Failed to submit the following values:", {
@@ -40,11 +39,12 @@ export function FormPreview() {
             <code className="text-white">{JSON.stringify(data, null, 2)}</code>
           </pre>
         ),
-      });
+      })
     } finally {
       setIsSubmitting(false)
     }
   }
+
 
   if (fields.length === 0) {
     return (

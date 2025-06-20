@@ -1,5 +1,6 @@
 "use client"
 
+import { UseFormRegister, UseFormWatch, UseFormSetValue, FieldValues } from "react-hook-form"
 import type { FormField } from "@/lib/store"
 import { forwardRef } from "react"
 import { cn } from "@/lib/utils"
@@ -7,10 +8,10 @@ import { cn } from "@/lib/utils"
 interface FormFieldRendererProps {
   field: FormField
   preview?: boolean
-  register?: any
+  register?: UseFormRegister<FieldValues>
   error?: string
-  setValue?: (name: string, value: any) => void
-  watch?: (name: string) => any
+  setValue?: UseFormSetValue<FieldValues>
+  watch?: UseFormWatch<FieldValues>
 }
 
 export const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
