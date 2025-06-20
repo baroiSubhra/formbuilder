@@ -73,7 +73,7 @@ export function PropertiesPanel() {
             value={selectedField.label}
             onChange={(e) => handleUpdateField({ label: e.target.value })}
             placeholder="Field label"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
           />
         </div>
 
@@ -88,7 +88,7 @@ export function PropertiesPanel() {
               value={selectedField.placeholder || ""}
               onChange={(e) => handleUpdateField({ placeholder: e.target.value })}
               placeholder="Placeholder text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
             />
           </div>
         )}
@@ -102,7 +102,7 @@ export function PropertiesPanel() {
             type="checkbox"
             checked={selectedField.required}
             onChange={(e) => handleUpdateField({ required: e.target.checked })}
-            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+            className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
           />
         </div>
 
@@ -117,11 +117,11 @@ export function PropertiesPanel() {
                     value={option}
                     onChange={(e) => updateOption(index, e.target.value)}
                     placeholder={`Option ${index + 1}`}
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   />
                   <button
                     onClick={() => removeOption(index)}
-                    className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md border border-red-200 hover:border-red-300"
+                    className="p-2 text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md border border-red-200 hover:border-red-300 cursor-pointer"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -136,11 +136,11 @@ export function PropertiesPanel() {
                 onChange={(e) => setNewOption(e.target.value)}
                 placeholder="New option"
                 onKeyPress={(e) => e.key === "Enter" && addOption()}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
               />
               <button
                 onClick={addOption}
-                className="p-2 text-green-600 hover:text-green-700 hover:bg-green-50 rounded-md border border-green-200 hover:border-green-300"
+                className="p-2 text-green-600 hover:text-green-700 hover:bg-green-50 rounded-md border border-green-200 hover:border-green-300 cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
               </button>
@@ -169,7 +169,7 @@ export function PropertiesPanel() {
                     })
                   }
                   placeholder="0"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                 />
               </div>
 
@@ -190,7 +190,7 @@ export function PropertiesPanel() {
                     })
                   }
                   placeholder="100"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                 />
               </div>
             </div>

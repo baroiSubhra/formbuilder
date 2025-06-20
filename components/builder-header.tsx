@@ -27,7 +27,7 @@ export function BuilderHeader() {
           <button
             onClick={handleHomeNavigation}
             disabled={isNavigatingHome}
-            className="text-xl font-bold text-slate-900 hover:text-blue-600 transition-colors p-0 h-auto bg-transparent border-none cursor-pointer"
+            className="text-xl font-bold text-slate-900 hover:text-green-600 transition-colors p-0 h-auto bg-transparent border-none cursor-pointer"
           >
             {isNavigatingHome ? (
               <div className="flex items-center space-x-2">
@@ -46,7 +46,7 @@ export function BuilderHeader() {
         <div className="flex items-center space-x-2">
           <button
             onClick={togglePreviewMode}
-            className="inline-flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-blue-50 hover:border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+            className="inline-flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-green-50 hover:border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors cursor-pointer"
           >
             {previewMode ? (
               <>
@@ -64,7 +64,7 @@ export function BuilderHeader() {
           <button
             onClick={clearForm}
             disabled={fields.length === 0 || previewMode}
-            className="inline-flex items-center space-x-2 px-3 py-2 text-sm font-medium text-red-600 bg-white border border-red-200 rounded-md hover:bg-red-50 hover:border-red-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center space-x-2 px-3 py-2 text-sm font-medium text-red-600 bg-white border border-red-200 rounded-md hover:bg-red-50 hover:border-red-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
           >
             <Trash2 className="w-4 h-4" />
             <span>Clear</span>

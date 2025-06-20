@@ -6,7 +6,7 @@ import { CSS } from "@dnd-kit/utilities"
 import type { FormField } from "@/lib/store"
 import { FormFieldRenderer } from "./form-field-renderer"
 import { useFormStore } from "@/lib/store"
-import { GripVertical, Trash2, Copy } from "lucide-react"
+import { GripVertical, Trash2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface SortableFormFieldProps {
@@ -14,7 +14,7 @@ interface SortableFormFieldProps {
 }
 
 export function SortableFormField({ field }: SortableFormFieldProps) {
-  const { selectedFieldId, selectField, deleteField, addField } = useFormStore()
+  const { selectedFieldId, selectField, deleteField } = useFormStore()
   const isSelected = selectedFieldId === field.id
 
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
@@ -30,18 +30,6 @@ export function SortableFormField({ field }: SortableFormFieldProps) {
     transition,
   }
 
-  // const handleDuplicate = (e: React.MouseEvent) => {
-  //   e.stopPropagation()
-  //   addField({
-  //     type: field.type,
-  //     label: `${field.label} (Copy)`,
-  //     placeholder: field.placeholder,
-  //     required: field.required,
-  //     options: field.options,
-  //     validation: field.validation,
-  //   })
-  // }
-
   return (
     <div
       ref={setNodeRef}
@@ -49,7 +37,7 @@ export function SortableFormField({ field }: SortableFormFieldProps) {
       className={cn(
         "group relative bg-white rounded-xl border-2 transition-all duration-200",
         isSelected
-          ? "border-blue-500 shadow-lg ring-2 ring-blue-100"
+          ? "border-green-500 shadow-lg ring-2 ring-green-100"
           : "border-slate-200 hover:border-slate-300 hover:shadow-md",
         isDragging && "opacity-50 shadow-2xl z-50 rotate-1 scale-105",
       )}
@@ -65,7 +53,7 @@ export function SortableFormField({ field }: SortableFormFieldProps) {
       {/* Action buttons */}
       <div className="absolute -left-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
         <button
-          className="h-8 w-8 p-0 cursor-grab active:cursor-grabbing bg-white shadow-lg hover:bg-slate-50 border border-slate-300 hover:border-slate-400 rounded-md flex items-center justify-center"
+          className="h-8 w-8 p-0 cursor-grab active:cursor-grabbing bg-white shadow-lg hover:bg-slate-50 border border-slate-300 hover:border-slate-400 rounded-md flex items-center justify-center cursor-pointer"
           {...attributes}
           {...listeners}
           title="Drag to reorder"
@@ -76,7 +64,7 @@ export function SortableFormField({ field }: SortableFormFieldProps) {
 
       <div className="absolute -right-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-200 z-10 flex flex-col space-y-1">
         <button
-          className="h-8 w-8 p-0 bg-white shadow-lg text-red-600 hover:text-red-700 hover:bg-red-50 border border-red-200 hover:border-red-300 rounded-md flex items-center justify-center"
+          className="h-8 w-8 p-0 bg-white shadow-lg text-red-600 hover:text-red-700 hover:bg-red-50 border border-red-200 hover:border-red-300 rounded-md flex items-center justify-center cursor-pointer"
           onClick={(e) => {
             e.stopPropagation()
             deleteField(field.id)

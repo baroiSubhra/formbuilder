@@ -35,7 +35,7 @@ export const useFormStore = create<FormStore>((set) => ({
   addField: (field) => {
     const newField: FormField = {
       ...field,
-      id: `field_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      id: `field${Date.now()}`,
     }
     set((state) => ({
       fields: [...state.fields, newField],
