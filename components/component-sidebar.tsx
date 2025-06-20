@@ -10,7 +10,7 @@ const componentTypes = [
     label: "Text Input",
     icon: Type,
     description: "Single line text input",
-    color: "bg-blue-100 text-blue-600",
+    color: "bg-green-100 text-green-600",
   },
   {
     type: "textarea" as const,
@@ -45,7 +45,7 @@ const componentTypes = [
     label: "Number",
     icon: Hash,
     description: "Numeric input",
-    color: "bg-indigo-100 text-indigo-600",
+    color: "bg-emerald-100 text-emerald-600",
   },
   {
     type: "email" as const,
@@ -119,7 +119,7 @@ function ComponentButton({ component }: { component: (typeof componentTypes)[0] 
       onClick={handleClick}
       className={cn(
         "w-full p-4 text-left bg-white border border-gray-200 rounded-lg transition-all duration-200 group",
-        "hover:bg-blue-50 hover:border-blue-200 hover:scale-[1.02] active:scale-[0.98]",
+        "hover:bg-green-50 hover:border-green-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer",
       )}
     >
       <div className="flex items-start space-x-3">
@@ -134,7 +134,7 @@ function ComponentButton({ component }: { component: (typeof componentTypes)[0] 
         <div className="flex-1">
           <div className="font-medium text-slate-900 flex items-center justify-between">
             <span>{component.label}</span>
-            <Plus className="w-4 h-4 text-slate-400 opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:text-blue-600" />
+            <Plus className="w-4 h-4 text-slate-400 opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:text-green-600" />
           </div>
           <div className="text-xs text-slate-500 mt-1">{component.description}</div>
         </div>

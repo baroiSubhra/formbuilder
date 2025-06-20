@@ -56,36 +56,39 @@ export function FormBuilder() {
   const activeField = fields.find((field) => field.id === activeId)
 
   return (
-    <div className="h-screen flex flex-col bg-slate-50">
-      <BuilderHeader />
+    <main>
+      <div className="h-screen flex flex-col bg-slate-50">
+        <BuilderHeader />
 
-      <div className="flex-1 flex overflow-hidden">
-        <DndContext
-          sensors={sensors}
-          collisionDetection={closestCenter}
-          onDragStart={handleDragStart}
-          onDragEnd={handleDragEnd}
-        >
-          {!previewMode && <ComponentSidebar />}
+        <div className="flex-1 flex overflow-hidden">
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCenter}
+            onDragStart={handleDragStart}
+            onDragEnd={handleDragEnd}
+          >
+            {!previewMode && <ComponentSidebar />}
 
-          <div className="flex-1 flex">
-            <SortableContext items={fields.map((f) => f.id)} strategy={verticalListSortingStrategy}>
-              <FormCanvas />
-            </SortableContext>
+            <div className="flex-1 flex">
+              <SortableContext items={fields.map((f) => f.id)} strategy={verticalListSortingStrategy}>
+                <FormCanvas />
+              </SortableContext>
 
-            {!previewMode && <PropertiesPanel />}
-          </div>
+              {!previewMode && <PropertiesPanel />}
+            </div>
 
-          <DragOverlay>
-            {activeField ? (
-              <div className="bg-white p-4 rounded-xl shadow-2xl border-2 border-blue-300 opacity-95 backdrop-blur-sm transform rotate-1 scale-105">
-                <div className="text-sm font-medium text-slate-700">{activeField.label}</div>
-                <div className="text-xs text-slate-500 mt-1">Reordering field...</div>
-              </div>
-            ) : null}
-          </DragOverlay>
-        </DndContext>
+            <DragOverlay>
+              {activeField ? (
+                <div className="bg-white p-4 rounded-xl shadow-2xl border-2 border-green-300 opacity-95 backdrop-blur-sm transform rotate-1 scale-105">
+                  <div className="text-sm font-medium text-slate-700">{activeField.label}</div>
+                  <div className="text-xs text-slate-500 mt-1">Reordering field...</div>
+                </div>
+              ) : null}
+            </DragOverlay>
+          </DndContext>
+        </div>
       </div>
-    </div>
+    </main>
+
   )
 }

@@ -45,7 +45,7 @@ export const FormFieldRenderer = forwardRef<HTMLElement, FormFieldRendererProps>
                 placeholder={field.placeholder}
                 disabled={!preview}
                 className={cn(
-                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors",
+                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors",
                   !preview && "pointer-events-none bg-gray-50",
                   error && "border-red-500 focus:ring-red-500",
                 )}
@@ -79,7 +79,7 @@ export const FormFieldRenderer = forwardRef<HTMLElement, FormFieldRendererProps>
                 disabled={!preview}
                 rows={4}
                 className={cn(
-                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none",
+                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors resize-none",
                   !preview && "pointer-events-none bg-gray-50",
                   error && "border-red-500 focus:ring-red-500",
                 )}
@@ -99,7 +99,7 @@ export const FormFieldRenderer = forwardRef<HTMLElement, FormFieldRendererProps>
                   }))}
                 disabled={!preview}
                 className={cn(
-                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors",
+                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors",
                   !preview && "pointer-events-none bg-gray-50",
                   error && "border-red-500 focus:ring-red-500",
                 )}
@@ -129,7 +129,7 @@ export const FormFieldRenderer = forwardRef<HTMLElement, FormFieldRendererProps>
                       required: field.required ? `${field.label} must be checked` : false,
                     }))}
                   className={cn(
-                    "h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded",
+                    "h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded",
                     !preview && "pointer-events-none",
                     error && "border-red-500",
                   )}
@@ -162,7 +162,7 @@ export const FormFieldRenderer = forwardRef<HTMLElement, FormFieldRendererProps>
                           required: field.required ? `${field.label} is required` : false,
                         }))}
                       className={cn(
-                        "h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300",
+                        "h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300",
                         error && "border-red-500",
                       )}
                     />
@@ -190,7 +190,7 @@ export const FormFieldRenderer = forwardRef<HTMLElement, FormFieldRendererProps>
                 placeholder={field.placeholder}
                 disabled={!preview}
                 className={cn(
-                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors",
+                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors",
                   !preview && "pointer-events-none bg-gray-50",
                   error && "border-red-500 focus:ring-red-500",
                 )}
@@ -216,7 +216,7 @@ export const FormFieldRenderer = forwardRef<HTMLElement, FormFieldRendererProps>
                 placeholder={field.placeholder || "Enter your email"}
                 disabled={!preview}
                 className={cn(
-                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors",
+                  "w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors",
                   !preview && "pointer-events-none bg-gray-50",
                   error && "border-red-500 focus:ring-red-500",
                 )}
