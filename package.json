@@ -1,5 +1,6 @@
 {
   "name": "okta-formkit",
+  "author": "subhra jyoti baroi",
   "version": "0.1.0",
   "private": true,
   "scripts": {
